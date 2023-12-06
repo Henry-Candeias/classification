@@ -40,6 +40,18 @@ def get_iris_data():
 # tables with the customers table, so that the resulting dataframe contains all the
 # contract, payment, and internet service options.
 def get_telco_data():
+
+    """
+    Retrieve Telco customer data from a CSV file or SQL database.
+
+    If a CSV file named 'telco.csv' exists, the function reads the data from the file.
+    If the file doesn't exist, it reads the data from the 'telco_churn' SQL database,
+    performs necessary joins, saves the resulting DataFrame to 'telco.csv', and returns the DataFrame.
+
+    Returns:
+    - pandas.DataFrame: Telco customer data with additional information from joined tables.
+    """
+
     filename = 'telco.csv'
     if os.path.exists(filename):
         print('this file exists, reading from csv')
